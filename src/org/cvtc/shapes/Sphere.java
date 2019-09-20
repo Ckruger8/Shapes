@@ -18,7 +18,8 @@ public class Sphere extends Shape{
 	}
 	
 	public Sphere(float radius) {
-		setRadius(radius);
+		super();
+		this.radius = (radius > 0) ? radius : 1 ;
 	}
 	
 	
