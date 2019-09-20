@@ -19,8 +19,9 @@ public class Cylinder extends Shape {
 	}
 	
 	public Cylinder(float radius, float height) {
-		setRadius(radius);
-		setHeight(height);
+		super();
+		this.radius = (radius > 0) ? radius : 1 ;
+		this.height = (height > 0) ? height : 1 ;
 	}
 
 	// Setters and Getters
