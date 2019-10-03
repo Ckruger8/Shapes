@@ -3,16 +3,19 @@ package org.cvtc.shapes.test;
 import static org.junit.Assert.*;
 
 import org.cvtc.shapes.Cylinder;
+import org.cvtc.shapes.Dialog;
+import org.cvtc.shapes.MessageBoxSub;
 import org.junit.Test;
 
 
 
 public class CylinderTest {
 
+	Dialog messageBox = new MessageBoxSub();
 	
-	Cylinder cylinder1 = new Cylinder(-1, 0);
-	Cylinder cylinder2 = new Cylinder(10, 5);
-	Cylinder cylinder3 = new Cylinder(11, 5.5f);
+	Cylinder cylinder1 = new Cylinder(messageBox, -1, 0);
+	Cylinder cylinder2 = new Cylinder(messageBox, 10, 5);
+	Cylinder cylinder3 = new Cylinder(messageBox, 11, 5.5f);
 	
 	@Test
 	public void testConstructer() {

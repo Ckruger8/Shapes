@@ -3,18 +3,22 @@ package org.cvtc.shapes.test;
 import static org.junit.Assert.*;
 
 import org.cvtc.shapes.Cuboid;
+import org.cvtc.shapes.Dialog;
+import org.cvtc.shapes.MessageBoxSub;
 import org.cvtc.shapes.Shape;
 import org.junit.Test;
 
 public class CuboidTest {
 	
-	Cuboid cube1 = new Cuboid(1.0f, 1.0f, 1.0f);
-	Cuboid cube2 = new Cuboid(1.0f, 1.0f, 1.0f);
-	Cuboid cube3 = new Cuboid(1.0f, 1.0f, 1.0f);
+	Dialog messageBox = new MessageBoxSub();
+	
+	Cuboid cube1 = new Cuboid(messageBox, 1.0f, 1.0f, 1.0f);
+	Cuboid cube2 = new Cuboid(messageBox, 1.0f, 1.0f, 1.0f);
+	Cuboid cube3 = new Cuboid(messageBox, 1.0f, 1.0f, 1.0f);
 
 	@Test
 	public void test() {
-		Shape cube2 = new Cuboid(1 ,1, 1);
+		Shape cube2 = new Cuboid(messageBox,1 ,1, 1);
 		
 		assertTrue(cube2 instanceof Cuboid);
 	}

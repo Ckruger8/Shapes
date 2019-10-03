@@ -2,14 +2,18 @@ package org.cvtc.shapes.test;
 
 import static org.junit.Assert.*;
 
+import org.cvtc.shapes.Dialog;
+import org.cvtc.shapes.MessageBoxSub;
 import org.cvtc.shapes.Sphere;
 import org.junit.Test;
 
 public class SphereTest {
 
-	Sphere sphere1 = new Sphere(-1);
-	Sphere sphere2 = new Sphere(50);
-	Sphere sphere3 = new Sphere(25.5f);
+	Dialog messageBox = new MessageBoxSub();
+	
+	Sphere sphere1 = new Sphere(messageBox, -1);
+	Sphere sphere2 = new Sphere(messageBox, 50);
+	Sphere sphere3 = new Sphere(messageBox, 25.5f);
 	
 	@Test
 	public void testConstructer() {

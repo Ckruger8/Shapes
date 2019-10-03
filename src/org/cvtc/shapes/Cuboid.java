@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  * @author Caleb Kruger
  *
  */
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer{
 
 	//Attributes
 	private float width;
@@ -15,11 +15,9 @@ public class Cuboid extends Shape {
 	
 	
 	//Constructors
-	public Cuboid() {
 	
-	}
-	
-	public Cuboid(float width, float height, float depth) {
+	public Cuboid(Dialog messageBox, float width, float height, float depth) {
+		super(messageBox);
 		setWidth(width);
 		setHeight(height);
 		setDepth(depth);
@@ -92,14 +90,22 @@ public class Cuboid extends Shape {
 	@Override
 	public void render() {
 		// TODO Auto-generated method stub\
-		JOptionPane.showMessageDialog(null,
-									"Width: " + width +
-									"\nHeight: " + height +
-									"\nDepth: " + depth +
-									"\nSurface Area: " + surfaceArea() + 
-									"\nVolume: " + volume(),
-									"Cuboid",
-									JOptionPane.PLAIN_MESSAGE);
+//		JOptionPane.showMessageDialog(null,
+//									"Width: " + width +
+//									"\nHeight: " + height +
+//									"\nDepth: " + depth +
+//									"\nSurface Area: " + surfaceArea() + 
+//									"\nVolume: " + volume(),
+//									"Cuboid",
+//									JOptionPane.PLAIN_MESSAGE);
+		String message = "Width: " + width + "\n" + 
+						"Height: " + height + "\n" +
+						"Depth: " + depth + "\n" +
+						"Surface Area: " + surfaceArea() + "\n" +
+						"Volume: " + volume() + "\n";
+
+		String title = "Cuboid";
+		getMessageBox().show(message, title);
 	}
 
 
